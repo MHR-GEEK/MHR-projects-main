@@ -1,3 +1,4 @@
+<img width="1098" height="1043" alt="Screenshot 2026-05-26 124922" src="https://github.com/user-attachments/assets/eebdfb58-a36a-4267-83ae-03de25d76ca5" />
 # AI Dermatologist Assistant
 
 Local Flask app with real upload handling, admin-approved brand management, and OpenAI image analysis when an API key is configured.
