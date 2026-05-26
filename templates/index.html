@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skin and Beauty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>Skin and Beauty</h1>
+          <p>by Haris</p>
+        </div>
+        <div class="top-actions">
+          <span class="status {{ 'ready' if ai_configured else 'missing' }}">{{ ai_status }}</span>
+          <button id="adminToggle" class="ghost" type="button">Admin</button>
+        </div>
+      </header>
+
+      <section id="adminPanel" class="admin-panel" hidden>
+        <div class="panel">
+          <h2>Admin</h2>
+          <form id="loginForm" class="row">
+            <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+            <button type="submit">Login</button>
+          </form>
+          <p id="adminMessage" class="message">Not logged in</p>
+
+          <form id="brandForm" class="row">
+            <input id="brandInput" type="text" placeholder="Add brand">
+            <button type="submit">Add</button>
+          </form>
+          <div id="brandList" class="chips">
+            {% for brand in brands %}
+              <button class="chip" data-brand="{{ brand }}">{{ brand }} x</button>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="phone-grid">
+        <div class="panel scan-card">
+          <div class="section-head">
+            <h2>Face Scan</h2>
+            <span>Upload</span>
+          </div>
+          <form id="scanForm">
+            <label class="upload">
+              <input id="imageInput" name="image" type="file" accept="image/png,image/jpeg,image/webp">
+              <span>Choose Image</span>
+            </label>
+            <img id="preview" class="preview" alt="">
+            <button class="primary" type="submit">Analyze</button>
+          </form>
+          <p id="scanMessage" class="message">Ready</p>
+        </div>
+
+        <div class="panel result-card">
+          <div class="section-head">
+            <h2>Result</h2>
+            <span>Auto scale</span>
+          </div>
+          <div id="result" class="result empty">
+            <div class="empty-state">Upload an image to begin.</div>
+          </div>
+        </div>
+
+        <div class="panel chat-panel">
+          <div class="section-head">
+            <h2>AI Chat</h2>
+            <span>Short replies</span>
+          </div>
+          <div id="chatLog" class="chat-log">
+            <div class="bubble assistant">Ask a skincare question.</div>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" placeholder="Message..." autocomplete="off">
+            <button type="submit">Send</button>
+          </form>
+          <p id="chatMessage" class="message"></p>
+        </div>
+      </section>
+
+      <div class="developer-mark">developer Skin and Beauty<br>by Haris</div>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
