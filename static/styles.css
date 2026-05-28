@@ -173,6 +173,8 @@ h1::after {
   border: 1px solid var(--line);
 }
 
+/* FACE SCAN UPDATED */
+
 .upload {
   display: flex;
   justify-content: center;
@@ -183,15 +185,47 @@ h1::after {
   background: #151b22;
   color: var(--muted);
   cursor: pointer;
+  transition: all .25s ease;
+}
+
+.upload:hover {
+  border-color: var(--accent);
+  background: #182029;
 }
 
 .upload input {
   display: none;
 }
 
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.upload-icon {
+  color: #8f98a4;
+}
+
 .primary {
   width: 100%;
   margin-top: 10px;
+  background: linear-gradient(90deg, #00e676, #00c853);
+  border: none;
+  color: #08120c;
+  font-weight: 700;
+}
+
+.primary:hover {
+  color: #08120c;
+  background: linear-gradient(90deg, #00f57a, #00d85f);
+}
+
+#scanMessage {
+  color: var(--accent);
 }
 
 .preview {
