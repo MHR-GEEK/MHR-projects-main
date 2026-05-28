@@ -1,3 +1,4 @@
+<img width="941" height="1672" alt="ai derma banner" src="https://github.com/user-attachments/assets/1d57d3f7-cacb-4dae-b389-54836b0228b6" />
 <img width="1098" height="1043" alt="Screenshot 2026-05-26 124922" src="https://github.com/user-attachments/assets/eebdfb58-a36a-4267-83ae-03de25d76ca5" />
 # AI Dermatologist Assistant
 
