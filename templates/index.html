@@ -3,18 +3,23 @@
   <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3518877205005914"
      crossorigin="anonymous"></script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Skin and Beauty</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
+
   <body>
     <main class="app-shell">
+
       <header class="topbar">
         <div>
           <h1>Skin and Beauty</h1>
           <p>by HARYX</p>
         </div>
+
         <div class="top-actions">
           <span class="status {{ 'ready' if ai_configured else 'missing' }}">{{ ai_status }}</span>
           <button id="adminToggle" class="ghost" type="button">Admin</button>
@@ -24,16 +29,19 @@
       <section id="adminPanel" class="admin-panel" hidden>
         <div class="panel">
           <h2>Admin</h2>
+
           <form id="loginForm" class="row">
             <input id="password" type="password" placeholder="Password" autocomplete="current-password">
             <button type="submit">Login</button>
           </form>
+
           <p id="adminMessage" class="message">Not logged in</p>
 
           <form id="brandForm" class="row">
             <input id="brandInput" type="text" placeholder="Add brand">
             <button type="submit">Add</button>
           </form>
+
           <div id="brandList" class="chips">
             {% for brand in brands %}
               <button class="chip" data-brand="{{ brand }}">{{ brand }} x</button>
@@ -43,70 +51,115 @@
       </section>
 
       <section class="phone-grid">
+
+        <!-- Face Scan -->
         <div class="panel scan-card">
           <div class="section-head">
             <h2>Face Scan</h2>
             <span>Upload</span>
           </div>
+
           <form id="scanForm">
-            <label class="upload">
-              <input id="imageInput" name="image" type="file" accept="image/png,image/jpeg,image/webp">
-              <span>Choose Image</span>
+
+            <label class="upload" for="imageInput">
+              <input
+                id="imageInput"
+                name="image"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+                hidden
+              >
+
+              <div class="upload-content">
+
+                <div class="upload-icon">
+                  <svg width="54" height="54" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round" />
+
+                    <path d="M7 10L12 5L17 10"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+
+                    <path d="M12 5V16"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round" />
+                  </svg>
+                </div>
+
+                <span>Choose Image</span>
+              </div>
             </label>
+
             <img id="preview" class="preview" alt="">
+
             <button class="primary" type="submit">Analyze</button>
           </form>
+
           <p id="scanMessage" class="message">Ready</p>
         </div>
 
+        <!-- Result -->
         <div class="panel result-card">
           <div class="section-head">
             <h2>Result</h2>
             <span>Auto scale</span>
           </div>
+
           <div id="result" class="result empty">
             <div class="empty-state">Upload an image to begin.</div>
           </div>
         </div>
 
+        <!-- Chat -->
         <div class="panel chat-panel">
           <div class="section-head">
             <h2>AI Chat</h2>
             <span>Feel Free to Ask</span>
           </div>
+
           <div id="chatLog" class="chat-log">
             <div class="bubble assistant">Ask a skincare question.</div>
           </div>
+
           <form id="chatForm" class="chat-form">
             <input id="chatInput" type="text" placeholder="Message..." autocomplete="off">
             <button type="submit">Send</button>
           </form>
+
           <p id="chatMessage" class="message"></p>
         </div>
       </section>
-         <!--adtera-->
-    <script src="https://pl29571974.effectivecpmnetwork.com/30/09/68/300968338dfe2045a74e1f82614ac3f3.js"></script>
+
+      <!-- adtera -->
+      <script src="https://pl29571974.effectivecpmnetwork.com/30/09/68/300968338dfe2045a74e1f82614ac3f3.js"></script>
 
       <script>
-  atOptions = {
-    'key' : '1174680521bc2f342a7da26c687792be',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://consumptionbackwardsentiments.com/1174680521bc2f342a7da26c687792be/invoke.js"></script>
+        atOptions = {
+          'key': '1174680521bc2f342a7da26c687792be',
+          'format': 'iframe',
+          'height': 90,
+          'width': 728,
+          'params': {}
+        };
+      </script>
 
-    
-<!--antiadblock-->
-<script src="https://consumptionbackwardsentiments.com/30/09/68/300968338dfe2045a74e1f82614ac3f3.js"></script>
+      <script src="https://consumptionbackwardsentiments.com/1174680521bc2f342a7da26c687792be/invoke.js"></script>
 
-      
-      <div class="developer-mark">Have a Beautiful soul + Face.<br>by HARYX</div>
+      <!-- antiadblock -->
+      <script src="https://consumptionbackwardsentiments.com/30/09/68/300968338dfe2045a74e1f82614ac3f3.js"></script>
+
+      <div class="developer-mark">
+        Have a Beautiful soul + Face.<br>by HARYX
+      </div>
+
     </main>
 
     <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>
-
