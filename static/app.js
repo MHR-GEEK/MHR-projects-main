@@ -199,3 +199,23 @@ chatForm.addEventListener("submit", async (event) => {
   addChatBubble("assistant", data.reply);
   setMessage(chatMessage, "");
 });
+let currentSessionId = null;   // keep it in memory while the page lives
+
+async function sendMessage() {
+    const userText = document.getElementById("msgInput").value;
+    const payload = {
+        message: userText,
+        session_id: currentSessionId   // may be null → server creates a new one
+    };
+
+    const resp = await fetch("/assistant", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    });
+
+    const data = await resp.json();
+    currentSessionId = data.session_id;   // store for next round
+
+    // …append userText & data.reply to the chat UI…
+}
